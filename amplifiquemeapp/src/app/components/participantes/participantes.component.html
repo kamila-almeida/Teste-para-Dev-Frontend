@@ -1,0 +1,26 @@
+<p>Participantes do Programa</p>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th></th>
+            <th>NOME</th>
+            <th>INDICAÇÕES</th>
+            <th>MILESTONES</th>
+            <th>CLIQUES/COMP.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let participante of participantes; let i = index">
+            <td>{{i}}</td>
+            <td><img src="{{participante.customer_picture}}"></td>
+            <td>
+                <tr><td>{{participante.customer_name}}</td></tr>
+                <tr><td>{{participante.created_at}}</td></tr>                
+            </td>
+            <td>{{participante.referral_confirmed}}/{{participante.referral_pending}}</td>
+            <td>{{participante.reward_redeemed}}/{{participante.reward_pending}}</td>
+            <td>{{participante.total_link_click}}/{{participante.total_shares}}</td>
+        </tr>
+    </tbody>
+</table>
