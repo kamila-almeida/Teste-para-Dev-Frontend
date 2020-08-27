@@ -31,8 +31,8 @@
                     </tbody>
                 </table>
 
-                <popover-content #detalhesPopover                    
-                    placement = "auto"             
+                <popover-content #detalhesPopover   
+                    placement = "auto"                              
                     [closeOnClickOutside]="true"
                     [closeOnMouseOutside]="false">        
                     
@@ -43,23 +43,45 @@
                     </ng-template>
 
                     <ng-template #popoverPreenchido>
-                        <div class="nome-participante">
-                            <img src="{{participante.customer_picture}}">
-                            {{participante.customer_name}} - #{{idParticipante}}
-                            <br/>
-                            Participa desde {{participante.created_at | date:"dd/MM/yyyy HH:mm":"UTC"}}
-                        </div>
+                        <div class="conteudo-popover">
+                            <div class="row nome-participante">
+                                <div class="col-2">
+                                    <img src="{{participante.customer_picture}}">
+                                </div>
+                                <div class="col-10">
+                                    {{participante.customer_name}} - #{{idParticipante}}
+                                    <br/>
+                                    <span class="data-participante-popover">Participa desde {{participante.created_at | date:"dd/MM/yyyy HH:mm":"UTC"}}</span>
+                                </div>
+                            </div>
 
-                        <div class="dados-indicacoes">
-                            {{participante.referral_confirmed}} confirmadas e {{participante.referral_pending}} pendentes
-                        </div>
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-11 badge alert-success dados-indicacoes">
+                                    <h6>Indicações</h6>                                
+                                    {{participante.referral_confirmed}} confirmadas e {{participante.referral_pending}} pendentes
+                                </div>
+                            </div>
 
-                        <div class="dados-milestones">                        
-                            {{participante.reward_redeemed}} obtidos e {{participante.reward_pending}} alcançados
-                        </div>
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-11 badge alert-info dados-milestones">
+                                    <h6>Milestones</h6>                    
+                                    {{participante.reward_redeemed}} obtidos e {{participante.reward_pending}} alcançados
+                                </div> 
+                            </div>
 
-                        <div class="dados-link">
-                            {{participante.total_link_click}} compartilhamentos e {{participante.total_shares}} cliques
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-11 badge alert-warning dados-link">
+                                    <h6>Dados do Link</h6>
+                                    {{participante.total_link_click}} compartilhamentos e {{participante.total_shares}} cliques
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 text-right">
+                                    <a href="#" class="text-decoration-none">Ver mais informações</a>
+                                </div>
+                            </div>
+
                         </div>
                     </ng-template>
                                         

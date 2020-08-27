@@ -2,10 +2,42 @@
 
 .card-body{
     overflow-y: auto;
+    
+    .table{
+        thead, .id-participante, .data-participante{
+            color: $fonte-cinza;
+        }    
+    }
+
+    .conteudo-popover{
+        .row{
+            padding-bottom: 10px;
+        }
+    }
+
+    .nome-participante{
+        .data-participante-popover{
+            color: $fonte-cinza;
+        }
+    }     
+    
+    ::ng-deep {        
+        .popover, .popover-inner {
+            width: 350px !important;
+            max-width: 350px !important;
+        }  
+
+        .bs-popover-top .arrow, 
+        .bs-popover-bottom .arrow {
+            margin-left: 60px;
+        }
+
+        .bs-popover-left .arrow,
+        .bs-popover-right .arrow {
+            margin-top: 60px;
+        }
+    }
 }
 
-.table{
-    thead, .id-participante, .data-participante{
-        color: $fonte-cinza;
-    }    
-}
+
+
