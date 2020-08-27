@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import data from '../../../assets/data.json';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-participantes',
@@ -9,13 +10,13 @@ import data from '../../../assets/data.json';
 export class ParticipantesComponent implements OnInit {
 
   participantes = [];
-  
+
   constructor() { }
 
   ngOnInit(): void {    
-    data.forEach(x => 
-      this.participantes.push(x)  
-    )
+    data.forEach(x =>     
+      this.participantes.push(x)     
+    )    
   }
 
 }
