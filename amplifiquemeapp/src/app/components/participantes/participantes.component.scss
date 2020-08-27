@@ -1,0 +1,11 @@
+@import '../../../scss/variables'; 
+
+.card-body{
+    overflow-y: auto;
+}
+
+.table{
+    thead, .id-participante, .data-participante{
+        color: $fonte-cinza;
+    }    
+}

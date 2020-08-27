@@ -9,13 +9,13 @@ import data from '../../../assets/data.json';
 export class ParticipantesComponent implements OnInit {
 
   participantes = [];
+  
   constructor() { }
 
   ngOnInit(): void {    
     data.forEach(x => 
       this.participantes.push(x)  
     )
-    console.log(this.participantes);
   }
 
 }

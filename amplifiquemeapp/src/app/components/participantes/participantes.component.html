@@ -1,26 +1,35 @@
-<p>Participantes do Programa</p>
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th></th>
-            <th>NOME</th>
-            <th>INDICAÇÕES</th>
-            <th>MILESTONES</th>
-            <th>CLIQUES/COMP.</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let participante of participantes; let i = index">
-            <td>{{i}}</td>
-            <td><img src="{{participante.customer_picture}}"></td>
-            <td>
-                <tr><td>{{participante.customer_name}}</td></tr>
-                <tr><td>{{participante.created_at}}</td></tr>                
-            </td>
-            <td>{{participante.referral_confirmed}}/{{participante.referral_pending}}</td>
-            <td>{{participante.reward_redeemed}}/{{participante.reward_pending}}</td>
-            <td>{{participante.total_link_click}}/{{participante.total_shares}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="row justify-content-center align-items-center h-100">
+    <div class="col-10">
+        <h5>Participantes do Programa</h5>
+        <div class="card">            
+            <div class="card-body">                
+                <table class="table table-borderless table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"></th>
+                            <th scope="col">NOME</th>
+                            <th scope="col">INDICAÇÕES</th>
+                            <th scope="col">MILESTONES</th>
+                            <th scope="col">CLIQUES/COMP.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row" *ngFor="let participante of participantes; let i = index">
+                            <td class="align-middle id-participante">{{i}}</td>
+                            <td class="align-middle"><img src="{{participante.customer_picture}}"></td>
+                            <td class="align-middle">                                    
+                                {{participante.customer_name}}
+                                <br/>  
+                                <span class="data-participante">{{participante.created_at}}</span>                                    
+                            </td>
+                            <td class="align-middle"><h4><span class="badge alert-success">{{participante.referral_confirmed}}/{{participante.referral_pending}}</span></h4></td>
+                            <td class="align-middle"><h4><span class="badge alert-info">{{participante.reward_redeemed}}/{{participante.reward_pending}}</span></h4></td>
+                            <td class="align-middle"><h4><span class="badge alert-warning">{{participante.total_link_click}}/{{participante.total_shares}}</span></h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>     
+    </div>
+</div>
