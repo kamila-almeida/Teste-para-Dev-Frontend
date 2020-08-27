@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParticipantesComponent } from './components/participantes/participantes.component';
+import { PopoverModule } from "ngx-smart-popover";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ParticipantesComponent } from './components/participantes/participantes
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PopoverModule
   ],
   providers: [],
   bootstrap: [AppComponent]

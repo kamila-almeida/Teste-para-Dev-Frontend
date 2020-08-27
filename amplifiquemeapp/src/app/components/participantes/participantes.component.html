@@ -15,7 +15,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr scope="row" *ngFor="let participante of participantes; let i = index">
+                        <tr scope="row" *ngFor="let participante of participantes; let i = index" (click)="PreencheDadoPopover(i)" 
+                            [popoverOnHover]="false" [popover]="detalhesPopover" popoverPlacement="right">
                             <td class="align-middle id-participante">{{i}}</td>
                             <td class="align-middle"><img src="{{participante.customer_picture}}"></td>
                             <td class="align-middle">                                    
@@ -29,6 +30,40 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <popover-content #detalhesPopover                    
+                    placement = "auto"             
+                    [closeOnClickOutside]="true"
+                    [closeOnMouseOutside]="false">        
+                    
+                    <div *ngIf="participante == null; then popoverVazio else popoverPreenchido"></div> 
+
+                    <ng-template #popoverVazio>
+                        Não há dados para mostrar
+                    </ng-template>
+
+                    <ng-template #popoverPreenchido>
+                        <div class="nome-participante">
+                            <img src="{{participante.customer_picture}}">
+                            {{participante.customer_name}} - #{{idParticipante}}
+                            <br/>
+                            Participa desde {{participante.created_at | date:"dd/MM/yyyy HH:mm":"UTC"}}
+                        </div>
+
+                        <div class="dados-indicacoes">
+                            {{participante.referral_confirmed}} confirmadas e {{participante.referral_pending}} pendentes
+                        </div>
+
+                        <div class="dados-milestones">                        
+                            {{participante.reward_redeemed}} obtidos e {{participante.reward_pending}} alcançados
+                        </div>
+
+                        <div class="dados-link">
+                            {{participante.total_link_click}} compartilhamentos e {{participante.total_shares}} cliques
+                        </div>
+                    </ng-template>
+                                        
+                </popover-content>
             </div>
         </div>     
     </div>

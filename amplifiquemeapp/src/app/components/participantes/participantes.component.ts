@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import data from '../../../assets/data.json';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-participantes',
@@ -10,6 +9,8 @@ import { formatDate } from '@angular/common';
 export class ParticipantesComponent implements OnInit {
 
   participantes = [];
+  participante = null;
+  idParticipante = null;
 
   constructor() { }
 
@@ -17,6 +18,11 @@ export class ParticipantesComponent implements OnInit {
     data.forEach(x =>     
       this.participantes.push(x)     
     )    
+  }
+
+  PreencheDadoPopover(id){
+    this.idParticipante = id;
+    this.participante = this.participantes[id];
   }
 
 }
