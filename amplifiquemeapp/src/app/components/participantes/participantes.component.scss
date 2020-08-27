@@ -1,11 +1,18 @@
 @import '../../../scss/variables'; 
 
-.card-body{
-    overflow-y: auto;
-    
+h5{
+    font-weight: bold;
+}
+
+.card-body{    
     .table{
         thead, .id-participante, .data-participante{
             color: $fonte-cinza;
+            tr{
+                th{
+                    font-weight: 500;
+                }
+            }            
         }    
     }      
     
@@ -22,7 +29,7 @@
 
         .bs-popover-left .arrow,
         .bs-popover-right .arrow {
-            margin-top: 120px;
+            margin-top: 137px;
         }
     }
 }

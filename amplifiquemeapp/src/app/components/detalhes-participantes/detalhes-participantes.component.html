@@ -1,34 +1,34 @@
 <div class="conteudo-popover">
-    
-    <div class="row nome-participante">
+
+    <div class="row info-participante">
         <div class="col-2">
             <img src="{{participante.customer_picture}}">
         </div>
         <div class="col-10">
-            {{participante.customer_name}} - #{{idParticipante}}
+            <span class="nome-participante">{{participante.customer_name}}</span> - <span class="id-participante">#{{idParticipante}}</span>
             <br/>
             <span class="data-participante-popover">Participa desde {{participante.created_at | date:"dd/MM/yyyy HH:mm":"UTC"}}</span>
         </div>
     </div>
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-11 badge alert-success text-left dados-indicacoes">
-            <h6>Indicações</h6>                                
-            {{participante.referral_confirmed}} confirmadas e {{participante.referral_pending}} pendentes
+        <div class="col-11 badge alert-info text-left dados-indicacoes">
+            <p>Indicações</p>                                
+            <span class="info-indicadores">{{participante.referral_confirmed}} confirmadas e {{participante.referral_pending}} pendentes</span>
         </div>
     </div>
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-11 badge alert-info text-left dados-milestones">
-            <h6>Milestones</h6>                    
-            {{participante.reward_redeemed}} obtidos e {{participante.reward_pending}} alcançados
+        <div class="col-11 badge alert-primary text-left dados-milestones">
+            <p>Milestones</p>                    
+            <span class="info-indicadores">{{participante.reward_redeemed}} obtidos e {{participante.reward_pending}} alcançados</span>
         </div> 
     </div>
 
     <div class="row justify-content-center align-items-center">
         <div class="col-11 badge alert-warning text-left dados-link">
-            <h6>Dados do Link</h6>
-            {{participante.total_link_click}} compartilhamentos e {{participante.total_shares}} cliques
+            <p>Dados do Link</p>
+            <span class="info-indicadores">{{participante.total_link_click}} compartilhamentos e {{participante.total_shares}} cliques</span>
         </div>
     </div>
 

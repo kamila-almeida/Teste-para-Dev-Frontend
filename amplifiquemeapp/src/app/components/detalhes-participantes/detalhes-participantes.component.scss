@@ -1,13 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import '../../../scss/variables'; 
 
 .conteudo-popover{
+    font-family: 'Varela Round', sans-serif;
     .row{
         padding-bottom: 10px;
+
+        .badge{
+            font-size: inherit;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .nome-participante, .id-participante{
+            font-size: 16px;
+        }
+
+        .dados-indicacoes, .dados-milestones, .dados-link{
+            p{
+                margin-bottom: 5px;
+            }
+            .info-indicadores{
+                font-weight: normal;
+            }
+        }
     }
+
+    .info-participante{
+        .id-participante{
+            font-weight: bold;
+        }
+
+        .data-participante-popover{
+            color: $fonte-cinza;
+        }
+    } 
 }
 
-.nome-participante{
-    .data-participante-popover{
-        color: $fonte-cinza;
-    }
-}  
+ 
