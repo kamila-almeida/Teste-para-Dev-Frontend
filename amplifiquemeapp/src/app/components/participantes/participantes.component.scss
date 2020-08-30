@@ -11,9 +11,24 @@ h5{
             tr{
                 th{
                     font-weight: 500;
-                }
+                }                
             }            
-        }    
+        } 
+        
+        tbody{
+            tr{
+                td{
+                    .badge{
+                        padding: 10px 15px;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            tr:hover{
+                cursor: pointer;                
+            }
+        }   
     }      
     
     ::ng-deep {        
