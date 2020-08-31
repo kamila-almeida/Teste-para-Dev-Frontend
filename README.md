@@ -11,7 +11,7 @@ O link da aplicação em produção é este: https://teste-amplifique-me.web.app
 Para rodar o código-fonte é necessário:
 
 * acessar o diretório <b>amplifiquemeapp</b> pelo console
-* executar o comando <b>npm install</b>
+* executar o comando <b>npm install</b> para instalar os pacotes npm utilizados no projeto
 * após instalação dos pacotes, executar o comando <b>ng serve</b>
 
 
